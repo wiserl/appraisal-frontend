@@ -1,21 +1,41 @@
 import React, {Component} from "react";
 
-export default class ViewRequester extends Component {
+export default class ViewRequesters extends Component {
   constructor( props ){
     super( props );
-    this.state = { ...props.item };
+    this.state = { requesters: {} };
+    console.log(this.state);
+  }
+
+  getRequesters(){
+    fetch(`http://localhost:5000/requesters`, { method: 'GET', mode: 'cors' })
+      .then(response => response.json())
+      .then(requesters => {
+        
+        this.setState({requesters});
+        console.log("Test");
+        console.log(requesters);
+      })
+ .catch(err => console.error(err));  }
+
+  componentDidMount(){
+    this.getRequesters();
   }
 
   render(){
     return (
       <div>
-        <h1>{this.state.name}</h1>
-        <p>Email: {this.state.email}<br />
-         
+        <h1>{this.state.requesters._name}</h1>
+        <p>Email: <br />
+          {this.state.requesters._email}
+        
         </p>
-        <p> Appraisals: {this.state.appraisals}</p>
-        <p> Location: {this.state.location}</p>
+        <p> number of appraisals: {this.state.requesters._appraisals}</p>
+       
       </div>
+      
+      
+      
     )
   }
 }

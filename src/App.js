@@ -1,27 +1,37 @@
 import React, { Component } from 'react';
 import './App.css';
+//import ViewRequesters from './components/ViewRequesters';
+import ViewRequester from  './components/viewRequester';
+import Home from './Home';
+import NotFound from './NotFound';
+import NewAppraisalType from './components/NewAppraisalType';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom';
 
-import ViewRequester from './components/ViewRequesters.js';
 
-
-const blah = { email: 'test@test.com', name: 'fafddf', appraisals: 'test appraisal', location: 'test location' };
+//const blah = { email: 'test@test.com', name: 'Gloria Klein', appraisals: 9, location: 'test location' };
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Appraisal App</h2>
-        </div>
-        <p className="App-intro">
-          Requesters
-        </p>
-        <div className="requester">
-          <ViewRequester requester={blah} />
-          </div>
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/requesters" component={ViewRequester} />
+          <Route exact path="/turntimes" component={NewAppraisalType} />
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
     );
   }
 }
 
 export default App;
+
+//  <Route exact path="/requesters" component={ViewRequesters} />
+//           <Route exact path="/regions" component={ViewRegions} />
+//           <Route exact path="/appraisals" component={ViewAppraisals} />
+//           <Route exact path ="/appraisalTypes" component={ViewAppraisalTypes} />
