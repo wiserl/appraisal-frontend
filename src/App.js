@@ -5,6 +5,9 @@ import ViewRequester from  './components/viewRequester';
 import Home from './Home';
 import NotFound from './NotFound';
 import NewAppraisalType from './components/NewAppraisalType';
+import NewRequester from './components/NewRequester';
+import NewAppraisal from './components/NewAppraisal';
+import NewRegion from './components/NewRegion';
 import {
   BrowserRouter as Router,
   Route,
@@ -22,6 +25,9 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/requesters" component={ViewRequester} />
           <Route exact path="/turntimes" component={NewAppraisalType} />
+          <Route exact path="/addrequesters" component={NewRequester} />
+          <Route exact path="/addappraisals" component={NewAppraisal} />
+          <Route exact path="/addregions" component={NewRegion} />
           <Route component={NotFound} />
         </Switch>
       </Router>

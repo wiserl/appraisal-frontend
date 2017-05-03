@@ -41,8 +41,8 @@ export default class NewAppraisalType extends Component {
             <label htmlFor="Type">Type</label>
             <input
               type="text"
-              id="summary"
-              name="Summary"
+              id="type"
+              name="type"
               onChange={ e => this.setState({ type: e.target.value })}
             />
           </div>
