@@ -1,21 +1,38 @@
-import React, {Component} from "react";
+import React, { Component } from 'react';
+import Region from './RegionFormat';
 
-export default class ViewRequester extends Component {
-  constructor( props ){
-    super( props );
-    this.state = { ...props.region };
+
+
+export default class extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = { regions: [] };
   }
 
-  render(){
+  /**
+   * Why do we have to call the api function here?
+   */
+  componentDidMount() {
+    fetch(`http://localhost:5000/regions/`)
+      .then(response => response.json())
+      .then(regions => this.setState({ regions }))
+      .catch(console.error);
+  }
+
+  // Called when the state changes...
+  render() {
+
+    // Why is it bad to put fetch in here....?
+
     return (
       <div>
-        <h1>{this.state.name}</h1>
-        <p> <br />
-          Email:{this.state.email}
-        </p>
-        <p># of appraisals: {this.state.appraisals}</p>
-        <p>location: {this.state.location}</p>
+        <h1>Regions</h1>
+
+         {this.state.regions.map(regions => Region(regions))}
+
       </div>
-    )
+    );
   }
 }

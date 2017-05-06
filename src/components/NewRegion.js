@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class NewRegion extends Component {
   constructor( props ){
     super( props );
-    this.state = { region: {}, id: '1' };
+    this.state = { region: {} };
   }
 
   createRegion = region => {
@@ -25,6 +25,7 @@ export default class NewRegion extends Component {
   handleSubmit = e => {
     e.preventDefault();
     let region= {}
+    
     region.name= this.state.name;
     region.turnTime= this.state.turnTime;
     region.cost= this.state.cost;
@@ -36,7 +37,10 @@ export default class NewRegion extends Component {
   render(){
     return (
       <div>
+      <h1>Add a Region!</h1>
         <form onSubmit={this.handleSubmit} method="post" name="form">
+         
+         
           <div>
             <label htmlFor="Name">Name</label>
             <input

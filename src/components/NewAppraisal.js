@@ -3,14 +3,16 @@ import React, { Component } from "react";
 export default class NewAppraisal extends Component {
   constructor( props ){
     super( props );
-    this.state = { appraisal: {}, id: '1' };
+    this.state = { appraisal: {} };
   }
+
+// `https://limitless-river-27779.herokuapp.com/appraisals`
 
   createAppraisal = appraisal => {
     var myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json');
 
-    fetch(`http://localhost:5000/appraisals/`, {
+    fetch(`http://localhost:5000/appraisals`, {
       method: 'post',
       mode: 'cors',
       body: JSON.stringify(appraisal),
@@ -25,7 +27,7 @@ export default class NewAppraisal extends Component {
   handleSubmit = e => {
     e.preventDefault();
     let appraisal= {}
-    appraisal.id= this.state.id;
+   
     appraisal.email= this.state.email;
     appraisal.type= this.state.type;
     appraisal.start= this.state.start;
@@ -37,17 +39,13 @@ export default class NewAppraisal extends Component {
 
   render(){
     return (
+      
       <div>
+      <h1>Add an appraisal</h1>
         <form onSubmit={this.handleSubmit} method="post" name="form">
-          <div>
-            <label htmlFor="ID">ID</label>
-            <input
-              type="text"
-              id="ID"
-              name="ID"
-              onChange={ e => this.setState({ ID: e.target.value })}
-            />
-          </div>
+          
+         
+          
           <div>
             <label htmlFor="Email">Email</label>
             <textarea

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class NewRequester extends Component {
   constructor( props ){
     super( props );
-    this.state = { requester: {}, id: '1' };
+    this.state = { requester: {} };
   }
 
   createRequester = requester => {
@@ -25,7 +25,7 @@ export default class NewRequester extends Component {
   handleSubmit = e => {
     e.preventDefault();
     let requester= {}
-    requester.id= "4321";
+    
     requester.name= this.state.name;
     requester.email= this.state.email;
     requester.appraisals= this.state.appraisals
@@ -36,7 +36,9 @@ export default class NewRequester extends Component {
   render(){
     return (
       <div>
+      <h1>Add a Requester!</h1>
         <form onSubmit={this.handleSubmit} method="post" name="form">
+          
           <div>
             <label htmlFor="Name">Name</label>
             <input
@@ -61,7 +63,7 @@ export default class NewRequester extends Component {
               type="text"
               id="appraisals"
               name="appraisals"
-              onChange={ e => this.setState({ turnTime: e.target.value })}
+              onChange={ e => this.setState({ appraisals: e.target.value })}
             />
           </div>
           

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class NewAppraisalType extends Component {
   constructor( props ){
     super( props );
-    this.state = { appraisalType: {}, id: '1' };
+    this.state = { appraisalType: {} };
   }
 
   createAppraisalType = appraisalType => {
@@ -25,7 +25,7 @@ export default class NewAppraisalType extends Component {
   handleSubmit = e => {
     e.preventDefault();
     let appraisalType= {}
-    appraisalType.id= "4321";
+    
     appraisalType.type= this.state.type;
     appraisalType.cost= this.state.cost;
     appraisalType.turnTime= this.state.turnTime
@@ -36,7 +36,9 @@ export default class NewAppraisalType extends Component {
   render(){
     return (
       <div>
+      <h1>Add a Turn Time!</h1>
         <form onSubmit={this.handleSubmit} method="post" name="form">
+         
           <div>
             <label htmlFor="Type">Type</label>
             <input

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Requester from './RequesterFormat';
+import Appraisal from './AppraisalFormat';
 
 
 
@@ -8,16 +8,16 @@ export default class extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { requesters: [] };
+    this.state = { appraisals: [] };
   }
 
   /**
    * Why do we have to call the api function here?
    */
   componentDidMount() {
-    fetch(`http://localhost:5000/requesters/`)
+    fetch(`http://localhost:5000/appraisals/`)
       .then(response => response.json())
-      .then(requesters => this.setState({ requesters }))
+      .then(appraisals => this.setState({ appraisals }))
       .catch(console.error);
   }
 
@@ -28,9 +28,9 @@ export default class extends Component {
 
     return (
       <div>
-        <h1>Requesters</h1>
+        <h1>List of appraisals</h1>
 
-         {this.state.requesters.map(requesters => Requester(requesters))}
+         {this.state.appraisals.map(appraisals => Appraisal(appraisals))}
 
       </div>
     );

@@ -1,5 +1,37 @@
 body {
-  margin: 0;
-  padding: 0;
+  margin: 100;
+  padding: 100;
   font-family: sans-serif;
 }
+
+
+form {
+         margin: 5 auto;
+         padding: 1em;
+         border: 1px solid black;
+         cursor: alias;
+         background-color: navajowhite;
+         text-align: center;
+         width:400px;
+         height: auto;
+         align-content: center;
+         border-radius: 1em;
+         justify-content: center;
+         
+     }
+     
+button {
+    background-color: cadetblue;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+label{
+    display:inline-block;
+    text-align: right;
+    padding: 6px;
+}
+

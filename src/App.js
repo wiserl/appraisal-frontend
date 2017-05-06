@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
 //import ViewRequesters from './components/ViewRequesters';
-import ViewRequester from  './components/viewRequester';
+//import ViewRequester from  './components/viewRequester';
 import Home from './Home';
 import NotFound from './NotFound';
 import NewAppraisalType from './components/NewAppraisalType';
 import NewRequester from './components/NewRequester';
 import NewAppraisal from './components/NewAppraisal';
 import NewRegion from './components/NewRegion';
+import Requesters from './components/ViewRequesters';
+import Appraisals from './components/ViewAppraisals';
+import Regions from './components/ViewRegions';
 import {
   BrowserRouter as Router,
   Route,
@@ -23,11 +26,14 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/requesters" component={ViewRequester} />
+          <Route exact path="/requesters" component={Requesters} />
           <Route exact path="/turntimes" component={NewAppraisalType} />
           <Route exact path="/addrequesters" component={NewRequester} />
           <Route exact path="/addappraisals" component={NewAppraisal} />
           <Route exact path="/addregions" component={NewRegion} />
+          <Route exact path="/appraisals" component={Appraisals} />
+          <Route exact path="/regions" component={Regions} />
+          
           <Route component={NotFound} />
         </Switch>
       </Router>
