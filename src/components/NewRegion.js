@@ -37,7 +37,7 @@ export default class NewRegion extends Component {
   render(){
     return (
       <div>
-      <h1>Add a Region!</h1>
+      <h1>Add A Region!</h1>
         <form onSubmit={this.handleSubmit} method="post" name="form">
          
          
@@ -76,6 +76,7 @@ export default class NewRegion extends Component {
             <button type="submit">Save</button>
           </div>
         </form>
+        <li><a href="http://localhost:3000/menu">menu</a></li>
       </div>
     )
   }

@@ -36,7 +36,7 @@ export default class NewRequester extends Component {
   render(){
     return (
       <div>
-      <h1>Add a Requester!</h1>
+      <h1>Add A Requester!</h1>
         <form onSubmit={this.handleSubmit} method="post" name="form">
           
           <div>
@@ -71,6 +71,7 @@ export default class NewRequester extends Component {
             <button type="submit">Save</button>
           </div>
         </form>
+        <li><a href="http://localhost:3000/menu">menu</a></li>
       </div>
     )
   }

@@ -11,9 +11,7 @@ export default class extends Component {
     this.state = { requesters: [] };
   }
 
-  /**
-   * Why do we have to call the api function here?
-   */
+ 
   componentDidMount() {
     fetch(`http://localhost:5000/requesters/`)
       .then(response => response.json())
@@ -21,16 +19,17 @@ export default class extends Component {
       .catch(console.error);
   }
 
-  // Called when the state changes...
+  
   render() {
 
-    // Why is it bad to put fetch in here....?
+    
 
     return (
       <div>
         <h1>Requesters</h1>
 
          {this.state.requesters.map(requesters => Requester(requesters))}
+         <li><a href="http://localhost:3000/menu">menu</a></li>
 
       </div>
     );

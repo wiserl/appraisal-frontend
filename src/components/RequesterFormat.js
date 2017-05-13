@@ -1,9 +1,10 @@
 import React from 'react';
 
 const styles = {
-  border: '1px solid #545454',
-  margin: '10px',
-  padding: '15px'
+  border: '4px solid #545454',
+  margin: '90px',
+  padding: '40px',
+  
 };
 
 export default requester => (

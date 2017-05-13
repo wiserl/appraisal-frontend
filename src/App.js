@@ -11,6 +11,8 @@ import NewRegion from './components/NewRegion';
 import Requesters from './components/ViewRequesters';
 import Appraisals from './components/ViewAppraisals';
 import Regions from './components/ViewRegions';
+import TurnTime from './components/TurnTimes';
+ import Menu from './components/Menu';
 import {
   BrowserRouter as Router,
   Route,
@@ -33,6 +35,8 @@ class App extends Component {
           <Route exact path="/addregions" component={NewRegion} />
           <Route exact path="/appraisals" component={Appraisals} />
           <Route exact path="/regions" component={Regions} />
+          <Route path="/getturntimes" component={TurnTime} />
+         <Route exact path="/menu" component ={Menu} />
           
           <Route component={NotFound} />
         </Switch>

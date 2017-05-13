@@ -3,6 +3,7 @@ import Appraisal from './AppraisalFormat';
 
 
 
+
 export default class extends Component {
 
   constructor(props) {
@@ -11,9 +12,7 @@ export default class extends Component {
     this.state = { appraisals: [] };
   }
 
-  /**
-   * Why do we have to call the api function here?
-   */
+  
   componentDidMount() {
     fetch(`http://localhost:5000/appraisals/`)
       .then(response => response.json())
@@ -21,16 +20,17 @@ export default class extends Component {
       .catch(console.error);
   }
 
-  // Called when the state changes...
   render() {
 
-    // Why is it bad to put fetch in here....?
+ 
 
     return (
       <div>
+      
         <h1>List of appraisals</h1>
 
          {this.state.appraisals.map(appraisals => Appraisal(appraisals))}
+         <li><a href="http://localhost:3000/menu">menu</a></li>
 
       </div>
     );

@@ -1,4 +1,10 @@
  import React, { Component } from 'react';
+const styles = {
+  border: '1px solid #545454',
+  margin: '10px',
+  padding: '15px',
+  color: '1px solid #545454'
+};
 
 class Login extends Component {
 

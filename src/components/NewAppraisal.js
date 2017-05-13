@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from 'react-router';
 
 export default class NewAppraisal extends Component {
   constructor( props ){
@@ -41,7 +42,8 @@ export default class NewAppraisal extends Component {
     return (
       
       <div>
-      <h1>Add an appraisal</h1>
+      
+      <h1>Add An Appraisal!</h1>
         <form onSubmit={this.handleSubmit} method="post" name="form">
           
          
@@ -95,6 +97,8 @@ export default class NewAppraisal extends Component {
             <button type="submit">Save</button>
           </div>
         </form>
+        <li><a href="http://localhost:3000/menu">menu</a></li>
+        
       </div>
     )
   }
